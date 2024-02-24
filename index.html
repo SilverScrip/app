@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undertone || Developer </title>
+
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    #swagger-ui {
+      background-color: #f8f9fa;
+      padding: 20px;
+    }
+    #fake-endpoints {
+      margin-top: 20px;
+    }
+    #fake-endpoints .endpoint {
+      margin-bottom: 20px;
+    }
+    #logo-bar {
+      background-color: #e9ecef; /* Light grey background color */
+      padding: 10px;
+      text-align: center;
+    }
+    #logo-bar img {
+      max-width: 50%;
+      height: 50%;
+    }
+      
+      /* Updated logo bar */
+      .navbar-brand img {
+        max-width: 160px;
+        height: auto;
+        margin-right: 5px;
+      }
+
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="68747470733a2f2f692e696d6775722e636f6d2f7250374a5233482e706e67.png" width="160" height="60" class="d-inline-block align-top" alt="">
+    </a>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="form-group">
+      <!-- Dropdown box to choose between ultrasonic or sonic -->
+      <label for="measurementType">Mix:</label>
+      <select class="form-control" id="measurementType">
+        <option value="storm.wav">SHAPE OF YOU (STORMZY REMIX)</option>
+        <option value="ultrasonic">Ultrasonic</option>
+        <option value="sonic">Sonic</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="messageInput">Payload:</label>
+      <input type="text" class="form-control" id="messageInput" placeholder="Type your message">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-primary" id="sendButton">Send</button>
+      <button class="btn btn-danger" id="stopButton">Stop</button>
+    </div>
+  </div>
+
+ <div id="swagger-ui" class="container">
+   <h2>Payload configuration</h2>
+
+     <div class="endpoint">
+       <div class="form-group">
+             <label for="duration">Duration:</label>
+             <input type="number" step="any" class="form-control" id="duration" value="60.0" readonly>
+           </div>
+
+           <div class="form-group">
+             <label for="interval">Interval:</label>
+             <input type="number" step="any" class="form-control" id="interval" value="10.0" readonly>
+           </div>
+
+           <div class="form-group">
+             <label for="startTime">Start Time:</label>
+             <input type="number" step="any" class="form-control" id="startTime" value="5.0" readonly>
+           </div>
+
+           <div class="form-group">
+             <label for="outputFnStr">Output Filename:</label>
+             <input type="text" class="form-control" id="outputFnStr" value="chunk1.wav" readonly>
+           </div>
+
+           <div class="form-group">
+             <label for="mixmode">Mix Mode:</label>
+             <input type="number" class="form-control" id="mixmode" value="0" readonly>
+           </div>
+
+           <div class="form-group">
+             <label for="volumeoxys">Volume (Oxys):</label>
+             <input type="number" step="any" class="form-control" id="volumeoxys" value="-3.0" readonly>
+           </div>
+
+           <div class="form-group">
+             <label for="volumeprogram">Volume (Program):</label>
+             <input type="number" step="any" class="form-control" id="volumeprogram" value="0.0" readonly>
+           </div>
+
+           <div class="form-group">
+             <label for="sampleRate">Sample Rate:</label>
+             <input type="number" step="any" class="form-control" id="sampleRate" value="44100.0" readonly>
+           </div>
+
+           <div class="form-group">
+             <label for="loudnessStats">Loudness Stats:</label>
+             <input type="number" class="form-control" id="loudnessStats" value="0" readonly>
+           </div>
+
+           <div class="form-group">
+             <label for="baseFreq">Base Frequency:</label>
+             <input type="number" step="any" class="form-control" id="baseFreq" value="12000.0" readonly>
+           </div>
+
+           <div class="form-group">
+             <label for="tonesSeparation">Tones Separation:</label>
+             <input type="number" class="form-control" id="tonesSeparation" value="1" readonly>
+           </div>
+
+           <div class="form-group">
+             <label for="synthMode">Synth Mode:</label>
+             <input type="number" class="form-control" id="synthMode" value="0" readonly>
+           </div>
+
+           <div class="form-group">
+             <label for="speakerMode">Speaker Mode:</label>
+             <input type="number" class="form-control" id="speakerMode" value="0" readonly>
+           </div>
+
+           <div class="form-group">
+             <label for="synthVolume">Synth Volume:</label>
+             <input type="number" step="any" class="form-control" id="synthVolume" value="0.0" readonly>
+           </div>
+
+
+  <script src="app.js"></script>
+  
+  <!-- Include Bootstrap JS and Popper.js (required for Bootstrap) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
