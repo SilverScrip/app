@@ -1,1 +1,73 @@
-const _0x6250e3=_0x3af1;function _0x3af1(_0x4464f9,_0x30d82e){const _0x37ea59=_0x37ea();return _0x3af1=function(_0x3af130,_0x423113){_0x3af130=_0x3af130-0x1d7;let _0x8c54b9=_0x37ea59[_0x3af130];return _0x8c54b9;},_0x3af1(_0x4464f9,_0x30d82e);}(function(_0x35026a,_0x51eaca){const _0x5536aa=_0x3af1,_0x18e930=_0x35026a();while(!![]){try{const _0x2e7ba2=parseInt(_0x5536aa(0x1f7))/0x1+-parseInt(_0x5536aa(0x1ee))/0x2*(-parseInt(_0x5536aa(0x1f8))/0x3)+-parseInt(_0x5536aa(0x1fd))/0x4+-parseInt(_0x5536aa(0x1e2))/0x5+parseInt(_0x5536aa(0x1fc))/0x6+-parseInt(_0x5536aa(0x1e3))/0x7*(-parseInt(_0x5536aa(0x1f0))/0x8)+-parseInt(_0x5536aa(0x1e9))/0x9*(parseInt(_0x5536aa(0x1e5))/0xa);if(_0x2e7ba2===_0x51eaca)break;else _0x18e930['push'](_0x18e930['shift']());}catch(_0x5d0304){_0x18e930['push'](_0x18e930['shift']());}}}(_0x37ea,0xbefa8),document['addEventListener'](_0x6250e3(0x1dc),function(){const _0x405d75=_0x6250e3,_0x4481ef=document[_0x405d75(0x1f1)](_0x405d75(0x1d7)),_0x2696a5=document[_0x405d75(0x1f1)](_0x405d75(0x1dd)),_0x21671a=document[_0x405d75(0x1f1)](_0x405d75(0x1ed)),_0xf8a045=document[_0x405d75(0x1ef)]('audio');let _0x19d1e6;function _0x4628d9(){const _0x52bee7=_0x405d75,_0x3ee98c=window['location']['hostname'];_0x19d1e6=new WebSocket(_0x52bee7(0x1f9)+_0x3ee98c+_0x52bee7(0x1e0)),_0x19d1e6[_0x52bee7(0x1f2)](_0x52bee7(0x1e4),function(_0x11af01){const _0x5465aa=_0x52bee7;_0x125aea(_0x11af01[_0x5465aa(0x1fb)]);}),_0x19d1e6[_0x52bee7(0x1f2)](_0x52bee7(0x1e1),function(_0x16644e){const _0x3a85ec=_0x52bee7;console[_0x3a85ec(0x1db)](_0x3a85ec(0x1de));}),_0x19d1e6['addEventListener'](_0x52bee7(0x1fa),function(_0x509fa8){const _0x306cd7=_0x52bee7;console[_0x306cd7(0x1db)](_0x306cd7(0x1ec)),setTimeout(_0x4628d9,0xbb8);});}_0x4628d9(),_0x2696a5['addEventListener'](_0x405d75(0x1f4),function(){_0xac3723();}),_0x21671a[_0x405d75(0x1f2)](_0x405d75(0x1f4),function(){_0x3da083();});function _0x125aea(_0x56cc9a){const _0x3cae10=_0x405d75,_0x23c575=window[_0x3cae10(0x1da)][_0x3cae10(0x1d8)],_0x279a92=_0x3cae10(0x1d9)+_0x23c575+_0x3cae10(0x1f6)+_0x56cc9a['slice'](0x0,0x5)+'.wav';setTimeout(()=>{_0x23ad4a(_0x279a92);},0x3e8);}function _0x3da083(){const _0x299727=_0x405d75;_0xf8a045['pause'](),_0xf8a045[_0x299727(0x1f3)]=0x0,console[_0x299727(0x1eb)](_0x299727(0x1e8));}function _0x23ad4a(_0x81adaf){_0xf8a045['src']=_0x81adaf,_0xf8a045['play']();}function _0xac3723(){const _0x1c01b6=_0x405d75,_0x5d76b3=_0x4481ef[_0x1c01b6(0x1df)];if(_0x19d1e6[_0x1c01b6(0x1e6)]===WebSocket[_0x1c01b6(0x1e7)]){const _0x9de29d=''+_0x5d76b3;_0x19d1e6[_0x1c01b6(0x1ea)](_0x9de29d),_0x4481ef[_0x1c01b6(0x1df)]='';}else console[_0x1c01b6(0x1eb)]('Audio\x20Socket\x20is\x20not\x20open.\x20Unable\x20to\x20send\x20message.');}window['addEventListener'](_0x405d75(0x1f5),function(){const _0x5881b3=_0x405d75;_0x19d1e6&&_0x19d1e6[_0x5881b3(0x1fa)]();});}));function _0x37ea(){const _0x3e10ff=['sendButton','Audio\x20Socket\x20connection\x20opened.','value',':8080/audio','open','4788115mozNyk','7ajFgwj','message','10XqYbMi','readyState','OPEN','Audio\x20playback\x20stopped.','9865098NAemtK','send','error','Audio\x20Socket\x20connection\x20closed.\x20Reconnecting...','stopButton','26oRiXrh','createElement','9307680RRBEcw','getElementById','addEventListener','currentTime','click','beforeunload',':8000/build/','1381054SGVgZK','70212CIAgpc','ws://','close','data','5134932HSoQvq','3474380qBjMSX','messageInput','hostname','http://','location','log','DOMContentLoaded'];_0x37ea=function(){return _0x3e10ff;};return _0x37ea();}
+document.addEventListener('DOMContentLoaded', function () {
+  const messageInput = document.getElementById("messageInput");
+  const sendButton = document.getElementById("sendButton");
+  const stopButton = document.getElementById("stopButton");
+  const audioPlayer = document.createElement("audio");
+
+  let ws;
+
+  function connectWebSocket() {
+    const host = window.location.hostname;
+    ws = new WebSocket(`ws://${host}:8080/audio`);
+
+    ws.addEventListener('message', function (evt) {
+      handleMessage(evt.data);
+    });
+
+    ws.addEventListener('open', function (evt) {
+      console.log("Audio Socket connection opened.");
+    });
+
+    ws.addEventListener('close', function (evt) {
+      console.log("Audio Socket connection closed. Reconnecting...");
+      setTimeout(connectWebSocket, 3000);
+    });
+  }
+
+  connectWebSocket();
+
+  sendButton.addEventListener('click', function () {
+    sendMessage();
+  });
+
+  stopButton.addEventListener('click', function () {
+    stopAudio();
+  });
+
+  function handleMessage(data) {
+    const host = window.location.hostname;
+    const audioSrc = `http://${host}:8000/build/${data.slice(0, 5)}.wav`;
+    setTimeout(() => {
+      playAudio(audioSrc);
+    }, 1000);
+  }
+
+  function stopAudio() {
+    audioPlayer.pause();
+    audioPlayer.currentTime = 0;
+    console.error("Audio playback stopped.");
+  }
+
+  function playAudio(audioSrc) {
+    audioPlayer.src = audioSrc;
+    audioPlayer.play();
+  }
+
+  function sendMessage() {
+    const message = messageInput.value;
+
+    if (ws.readyState === WebSocket.OPEN) {
+      const completeMessage = `${message}`;
+      ws.send(completeMessage);
+      messageInput.value = "";
+    } else {
+      console.error("Audio Socket is not open. Unable to send message.");
+    }
+  }
+
+  window.addEventListener('beforeunload', function () {
+    if (ws) {
+      ws.close();
+    }
+  });
+});
